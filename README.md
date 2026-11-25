@@ -4,7 +4,7 @@ AdmixRS estimates ancestry component proportions from consumer DNA genotypes on 
 
 ## Installation
 
-Download the archive for your system from this repository’s **Releases** page and extract it. Choose Windows x86-64 (`.zip`), Linux x86-64 (`.tar.gz`), or macOS (`.tar.gz`, Apple Silicon or Intel). Keep the `data` directory beside the executable. Each archive includes the reference models, a public 23andMe demo, and the license.
+Download the `.tar.gz` asset for Windows x86-64, Linux x86-64, macOS Apple Silicon, or macOS Intel. Extract it with `tar -xzf <archive.tar.gz>`. Inside the extracted folder, the executable (`admixrs.exe` on Windows, `admixrs` elsewhere) reads the reference models from the adjacent `data/` directory. You can move the models to another location and pass `--data-dir DIR`. [GitHub Releases](https://github.com/pzweuj/AdmixRS/releases)
 
 Run `./admixrs -m K12b` from the extracted directory, or `.\admixrs.exe -m K12b` in PowerShell. To use the commands below from any directory, add the extracted folder to your `PATH`.
 
@@ -56,3 +56,9 @@ Percentages describe the reference components of the selected model. Compare com
 Keep personal inputs in `private/` and saved reports in `results/`. Git ignores both directories and the default `admixture_results.txt` report. Tests use synthetic calls and the upstream public demo. Release archives include only the executable, documentation, license, public demo, and registered reference files.
 
 AdmixRS code is licensed under GPL-3.0-only. Reference calculator files belong to their respective authors and retain their own terms. [GPLv3 license](LICENSE) · [Reference data credits](data/README.md)
+
+## Publishing a release
+
+Push a version tag such as `v0.1.0`, or choose **Actions → Build and release → Run workflow**. A manual run on a branch creates a release for that commit using the version in `Cargo.toml` prefixed with `v`. The optional tag field overrides that default. To repair an older release, select its tag as the workflow ref. Publishing a release through the GitHub UI also triggers the build.
+
+Each runner tests the native executable and runs the public demo from its extracted archive. Once all four builds pass, the workflow attaches the archives to the corresponding GitHub Release. A rerun fills in missing assets.

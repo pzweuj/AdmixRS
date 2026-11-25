@@ -3,13 +3,51 @@ name: Build and release
 on:
   push:
     tags: ['v*']
+  release:
+    types: [published]
   workflow_dispatch:
+    inputs:
+      tag:
+        description: 'Release tag (default on a branch: v followed by the Cargo version)'
+        type: string
+        required: false
 
 permissions:
   contents: read
 
 jobs:
+  version:
+    runs-on: ubuntu-24.04
+    outputs:
+      tag: ${{ steps.version.outputs.tag }}
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+          sparse-checkout: Cargo.toml
+          sparse-checkout-cone-mode: false
+          persist-credentials: false
+      - id: version
+        env:
+          REQUESTED_TAG: ${{ inputs.tag }}
+        run: |
+          if [[ "$GITHUB_REF_TYPE" == tag ]]; then
+            tag="$GITHUB_REF_NAME"
+          elif [[ -n "$REQUESTED_TAG" ]]; then
+            tag="$REQUESTED_TAG"
+          else
+            tag=$(python3 -c 'import tomllib; print("v" + tomllib.load(open("Cargo.toml", "rb"))["package"]["version"])')
+          fi
+          git check-ref-format "refs/tags/$tag"
+          [[ "$tag" != -* ]]
+          if existing=$(git rev-parse --verify --quiet "refs/tags/$tag^{commit}") && [[ "$existing" != "$(git rev-parse HEAD)" ]]; then
+            echo "::error::Tag $tag points to a different commit. Run on that tag or choose a new version."
+            exit 1
+          fi
+          echo "tag=$tag" >> "$GITHUB_OUTPUT"
+
   build:
+    needs: version
     name: Build ${{ matrix.platform }}
     runs-on: ${{ matrix.runner }}
     strategy:
@@ -19,25 +57,20 @@ jobs:
           - platform: windows-x86_64
             runner: windows-2025
             binary: admixrs.exe
-            format: zip
           - platform: linux-x86_64
             runner: ubuntu-22.04
             binary: admixrs
-            format: tar.gz
           - platform: macos-arm64
             runner: macos-15
             binary: admixrs
-            format: tar.gz
           - platform: macos-x86_64
             runner: macos-15-intel
             binary: admixrs
-            format: tar.gz
     defaults:
       run:
         shell: bash
     env:
       PACKAGE: admixrs-${{ matrix.platform }}
-      FORMAT: ${{ matrix.format }}
       BINARY: ${{ matrix.binary }}
     steps:
       - uses: actions/checkout@v6
@@ -53,32 +86,28 @@ jobs:
           cargo +stable test --release --locked
           cargo +stable build --release --locked
       - name: Package
-        run: python .github/scripts/package_release.py "target/release/$BINARY" "dist/$PACKAGE.$FORMAT"
+        run: python .github/scripts/package_release.py "target/release/$BINARY" "dist/$PACKAGE.tar.gz"
       - name: Run the packaged demo
         run: |
           mkdir unpacked
-          if [[ "$FORMAT" == zip ]]; then
-            python -m zipfile -e "dist/$PACKAGE.$FORMAT" unpacked
-          else
-            tar -xzf "dist/$PACKAGE.$FORMAT" -C unpacked
-          fi
+          tar -xzf "dist/$PACKAGE.tar.gz" -C unpacked
           cd unpacked
-          "./$PACKAGE/$BINARY" -m K7b --data-dir "$PACKAGE/data" --sort --ignore-zeros
+          test -s "$PACKAGE/data/K7b.7.F"
+          "./$PACKAGE/$BINARY" -m K7b --sort --ignore-zeros
       - uses: actions/upload-artifact@v7
         with:
           name: ${{ env.PACKAGE }}
-          path: dist/${{ env.PACKAGE }}.${{ env.FORMAT }}
+          path: dist/${{ env.PACKAGE }}.tar.gz
           compression-level: 0
           if-no-files-found: error
           retention-days: 3
 
   release:
-    needs: build
-    if: github.event_name == 'push' && startsWith(github.ref, 'refs/tags/v')
+    needs: [version, build]
     runs-on: ubuntu-24.04
     permissions:
       contents: write
-    concurrency: release-${{ github.ref }}
+    concurrency: release-${{ needs.version.outputs.tag }}
     steps:
       - uses: actions/download-artifact@v8
         with:
@@ -89,15 +118,22 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
           GH_REPO: ${{ github.repository }}
-          TAG: ${{ github.ref_name }}
+          TAG: ${{ needs.version.outputs.tag }}
         run: |
+          archives=(dist/admixrs-{windows-x86_64,linux-x86_64,macos-arm64,macos-x86_64}.tar.gz)
+          for file in "${archives[@]}"; do test -s "$file"; done
           if draft=$(gh release view "$TAG" --json isDraft --jq '.isDraft'); then
-            if [[ "$draft" != true ]]; then
-              echo "Release $TAG is already published."
-              exit 0
-            fi
+            uploaded=$(gh release view "$TAG" --json assets --jq '.assets[] | select(.state == "uploaded") | .name')
           else
-            gh release create "$TAG" --draft --verify-tag --generate-notes --title "AdmixRS $TAG"
+            gh release create "$TAG" --draft --target "$GITHUB_SHA" --generate-notes --title "AdmixRS $TAG"
+            draft=true
+            uploaded=""
           fi
-          gh release upload "$TAG" dist/* --clobber
-          gh release edit "$TAG" --draft=false
+          for file in "${archives[@]}"; do
+            if ! grep -Fxq "${file##*/}" <<< "$uploaded"; then
+              gh release upload "$TAG" "$file" --clobber
+            fi
+          done
+          if [[ "$draft" == true ]]; then
+            gh release edit "$TAG" --draft=false
+          fi
