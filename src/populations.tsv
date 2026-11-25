@@ -1,0 +1,401 @@
+K7b	South Asian	南亚
+K7b	West Asian	西亚
+K7b	Siberian	西伯利亚
+K7b	African	非洲
+K7b	Southern	地中海－中东
+K7b	Atlantic Baltic	大西洋波罗的海
+K7b	East Asian	东亚
+K12b	Gedrosia	格德罗西亚
+K12b	Siberian	西伯利亚
+K12b	Northwest African	西北非
+K12b	Southeast Asian	东南亚
+K12b	Atlantic Med	大西洋地中海
+K12b	North European	北欧
+K12b	South Asian	南亚
+K12b	East African	东非
+K12b	Southwest Asian	西南亚
+K12b	East Asian	东亚
+K12b	Caucasus	高加索
+K12b	Sub Saharan	撒哈拉以南非洲
+globe13	Siberian	西伯利亚
+globe13	Amerindian	美洲印第安
+globe13	West African	西非
+globe13	Palaeo African	旧非洲
+globe13	Southwest Asian	西南亚
+globe13	East Asian	东亚
+globe13	Mediterranean	地中海
+globe13	Australasian	澳大拉西亚
+globe13	Artic	北极
+globe13	West Asian	西亚
+globe13	North European	北欧
+globe13	South Asian	南亚
+globe13	East African	东非
+globe10	Ameriandian	美洲印第安
+globe10	West Asian	西亚
+globe10	Australasian	澳大拉西亚
+globe10	Palaeo African	旧非洲
+globe10	Neo African	新非洲
+globe10	Siberian	西伯利亚
+globe10	Southern	地中海－中东
+globe10	East Asian	东亚
+globe10	Atlantic Baltic	大西洋波罗的海
+globe10	South Asian	南亚
+world9	Amerindian	美洲印第安
+world9	East Asian	东亚
+world9	African	非洲
+world9	Atlantic Baltic	大西洋波罗的海
+world9	Australasian	澳大拉西亚
+world9	Siberian	西伯利亚
+world9	Caucasus Gedrosia	高加索－格德罗西亚
+world9	Southern	地中海－中东
+world9	South Asian	南亚
+Eurasia7	Sub Saharan	撒哈拉以南非洲
+Eurasia7	West Asian	西亚
+Eurasia7	Atlantic Baltic	大西洋波罗的海
+Eurasia7	East Asian	东亚
+Eurasia7	Southern	地中海－中东
+Eurasia7	South Asian	南亚
+Eurasia7	Siberian	西伯利亚
+Africa9	Europe	欧洲
+Africa9	Northwest Africa	西北非
+Africa9	Southwest Asia	西南亚
+Africa9	East Africa	东非
+Africa9	South Africa	南非
+Africa9	Mbuti	姆布蒂人
+Africa9	West Africa	西非
+Africa9	Biaka	比亚卡人
+Africa9	San	桑人
+weac2	Palaeoafrican	旧非洲
+weac2	Atlantic Baltic	大西洋波罗的海
+weac2	Northeast Asian	东北亚
+weac2	Near East	近东
+weac2	Sub Saharan	撒哈拉以南非洲
+weac2	South Asian	南亚
+weac2	Southeast Asian	东南亚
+E11	African	非洲
+E11	European	欧洲
+E11	India	印度
+E11	Malay	马来
+E11	South Chinese Dai	傣族
+E11	Southwest Chinese Yi	彝族
+E11	East Chinese	华东
+E11	Japanese	日本
+E11	North Chinese Oroqen	鄂伦春
+E11	Yakut	雅库特
+E11	American	美洲
+K36	Amerindian	美洲印第安
+K36	Arabian	阿拉伯
+K36	Armenian	亚美尼亚
+K36	Basque	巴斯克
+K36	Central African	中非
+K36	Central Euro	中欧
+K36	East African	东非
+K36	East Asian	东亚
+K36	East Balkan	东巴尔干
+K36	East Central Asian	中东亚
+K36	East Central Euro	中东欧
+K36	East Med	东地中海
+K36	Eastern Euro	东欧
+K36	Fennoscandian	芬诺斯坎底亚
+K36	French	法国
+K36	Iberian	伊比利亚
+K36	Indo-Chinese	印度支那
+K36	Italian	意大利
+K36	Malayan	马来亚
+K36	Near Eastern	近东
+K36	North African	北非
+K36	North Atlantic	北大西洋
+K36	North Caucasian	北高加索
+K36	North Sea	北海
+K36	Northeast African	东北非
+K36	Oceanian	大洋洲
+K36	Omotic	奥摩人
+K36	Pygmy	俾格米人
+K36	Siberian	西伯利亚
+K36	South Asian	南亚
+K36	South Central Asian	中南亚
+K36	South Chinese	华南
+K36	Volga-Ural	伏尔加－乌拉尔
+K36	West African	西非
+K36	West Caucasian	西高加索
+K36	West Med	西地中海
+EUtest13	South Baltic	南波罗的海
+EUtest13	East Euro	东欧
+EUtest13	North-Central Euro	中北欧
+EUtest13	Atlantic	大西洋
+EUtest13	West Med	西地中海
+EUtest13	East Med	东地中海
+EUtest13	West Asian	西亚
+EUtest13	Middle Eastern	中东
+EUtest13	South Asian	南亚
+EUtest13	East African	东非
+EUtest13	East Asian	东亚
+EUtest13	Siberian	西伯利亚
+EUtest13	West African	西非
+Jtest14	South Baltic	南波罗的海
+Jtest14	East Euro	东欧
+Jtest14	North-Central Euro	中北欧
+Jtest14	Atlantic	大西洋
+Jtest14	West Med	西地中海
+Jtest14	Ashkenazim	德系犹太人
+Jtest14	East Med	东地中海
+Jtest14	West Asian	西亚
+Jtest14	Middle Eastern	中东
+Jtest14	South Asian	南亚
+Jtest14	East African	东非
+Jtest14	East Asian	东亚
+Jtest14	Siberian	西伯利亚
+Jtest14	West African	西非
+HarappaWorld	South-Indian	南印度
+HarappaWorld	Baloch	俾路支人
+HarappaWorld	Caucasian	高加索人
+HarappaWorld	Northeast-Euro	东北欧
+HarappaWorld	Southeast-Asian	东南亚
+HarappaWorld	Siberian	西伯利亚
+HarappaWorld	Northeast-Asian	东北亚
+HarappaWorld	Papuan	巴布亚人
+HarappaWorld	American	美洲原住民
+HarappaWorld	Beringian	白令陆桥
+HarappaWorld	Mediterranean	地中海
+HarappaWorld	Southwest-Asian	西南亚
+HarappaWorld	San	桑人
+HarappaWorld	East-African	东非
+HarappaWorld	Pygmy	俾格米人
+HarappaWorld	West-African	西非
+TurkicK11	Southeast European	东南欧
+TurkicK11	West Asian	西亚
+TurkicK11	Southeast Asian	东南亚
+TurkicK11	Sub-Saharan African	撒哈拉以南非洲
+TurkicK11	Northeast European	东北欧
+TurkicK11	Indian	印度
+TurkicK11	Northwest European	西北欧
+TurkicK11	Turkic	突厥
+TurkicK11	Mongol	蒙古
+TurkicK11	Papuan	巴布亚
+TurkicK11	Northeast Asian	东北亚
+KurdishK10	Kurdish	库尔德人
+KurdishK10	Southeast-European	东南欧
+KurdishK10	Norhteast-European	东北欧
+KurdishK10	Indian	印度
+KurdishK10	East-Asian	东亚
+KurdishK10	Northwest-European	西北欧
+KurdishK10	Siberian	西伯利亚
+KurdishK10	Sardinian	撒丁
+KurdishK10	Southwest-Asian	西南亚
+KurdishK10	Sub-Saharan	撒哈拉以南非洲
+AncientNearEast13	Southeast Asian	东南亚
+AncientNearEast13	Anatolia Neolithic	新石器时代安纳托利亚
+AncientNearEast13	CHG-EEF	高加索狩猎采集者－早期欧洲农人
+AncientNearEast13	Polar	极地
+AncientNearEast13	EHG	欧洲狩猎采集者
+AncientNearEast13	Sub-Saharan	撒哈拉以南非洲
+AncientNearEast13	Iran-Neolithic	新石器时代伊朗
+AncientNearEast13	Karitiana	卡利吉亚纳
+AncientNearEast13	Ancestral-Indian	原始印度人
+AncientNearEast13	Natufian	纳吐夫
+AncientNearEast13	Siberian	西伯利亚
+AncientNearEast13	Papuan	巴布亚
+AncientNearEast13	SHG-WHG	斯堪的纳维亚－西欧狩猎采集者
+K7AMI	Sub-Saharan	撒哈拉以南非洲
+K7AMI	Oceanian	大洋洲
+K7AMI	Amerindian	美洲印第安人
+K7AMI	Euro Hunter-Gatherer	欧洲狩猎采集者
+K7AMI	Siberian	西伯利亚
+K7AMI	Southeast Asian	东南亚
+K7AMI	Near Eastern	近东
+K8AMI	Amerindian	美洲印第安人
+K8AMI	Siberian	西伯利亚
+K8AMI	Euro Hunter-Gatherer	欧洲狩猎采集者
+K8AMI	Oceanian	大洋洲
+K8AMI	Sub-Saharan	撒哈拉以南非洲
+K8AMI	Southeast Asian	东南亚
+K8AMI	Linearbandkeramik	线纹陶文化
+K8AMI	South-Central Asian	中南亚
+MDLPK27	Nilotic-Omotic	尼罗－奥摩
+MDLPK27	Ancestral-South-Indian	原始南印度人
+MDLPK27	North-European-Baltic	北欧－波罗的海
+MDLPK27	Uralic	乌拉尔
+MDLPK27	Australo-Melanesian	澳美
+MDLPK27	East-Siberean	东西伯利亚
+MDLPK27	Ancestral-Yayoi	原始弥生人
+MDLPK27	Caucasian-Near-Eastern	高尔索－近东
+MDLPK27	Tibeto-Burman	藏缅
+MDLPK27	Austronesian	南岛
+MDLPK27	Central-African-Pygmean	中非俾格米人
+MDLPK27	Central-African-Hunter-Catherers	中非狩猎采集者
+MDLPK27	Nilo-Sahrian	尼罗－撒哈拉
+MDLPK27	North-African	北非
+MDLPK27	Gedrosia-Caucasian	格德罗西亚－高加索
+MDLPK27	Cushitic	库施特
+MDLPK27	Congo-Pygmean	刚果俾格米人
+MDLPK27	Bushmen	布须曼人
+MDLPK27	South-Meso-Amerindian	中南美洲印第安人
+MDLPK27	South-West-European	西南欧
+MDLPK27	North-Amerindian	北美洲印第安人
+MDLPK27	Arabic	阿拉伯
+MDLPK27	North-Circumpolar	北极圈
+MDLPK27	Kalash	卡拉什人
+MDLPK27	Papuan-Australian	巴布亚－澳大利亚
+MDLPK27	Baltic-Finnic	波罗的海－芬兰
+MDLPK27	Bantu	班图人
+puntDNAL	EHG-Steppe	欧洲狩猎采集者－大草原
+puntDNAL	Oceanian	大洋洲
+puntDNAL	East Eurasian	东欧亚
+puntDNAL	Iran Neolithic	新石器时代伊朗
+puntDNAL	Siberian	西伯利亚
+puntDNAL	Sub-Saharan	撒哈拉以南非洲
+puntDNAL	African HG	非洲狩猎采集者
+puntDNAL	South Eurasian	南欧亚
+puntDNAL	Western HG	西方狩猎采集者
+puntDNAL	Natufian HG	纳吐夫狩猎采集者
+puntDNAL	Amerinidian	美洲印第安人
+puntDNAL	Anatolian Neolithic	新石器时代安纳托利亚
+K47	Kushitic	库施特
+K47	North-Iberian	北伊比利亚
+K47	East-Iberian	东伊比利亚
+K47	Tibeto-Burman	藏缅
+K47	North-African	北非
+K47	South-Caucasian	南高加索
+K47	North-Caucasian	北高加索
+K47	Paleo-Balkan	古巴尔干
+K47	Turkic-Altai	突厥－阿尔泰
+K47	Proto-Austronesian	原始南岛
+K47	Nilotic	尼罗人
+K47	East-Med	东地中海
+K47	Omotic	奥摩人
+K47	Munda	蒙达人
+K47	North-Amerind	北美印第安
+K47	Arabic	阿拉伯
+K47	East-Euro	东欧
+K47	Central-African	中非
+K47	Andean	安第斯
+K47	Indo-Chinese	中南半岛
+K47	South-Indian	南印度
+K47	NE-Asian	东北亚
+K47	Volgan	伏尔加
+K47	Mongolian	蒙古
+K47	Siberian	西伯利亚
+K47	North-Sea-Germanic	北海日耳曼
+K47	Celtic	凯尔特人
+K47	West-African	西非
+K47	West-Finnic	西芬兰
+K47	Uralic	乌拉尔
+K47	Sahelian	萨赫勒
+K47	NW-Indian	西北印度
+K47	East-African	东非
+K47	East-Asian	东亚
+K47	Amuro-Manchurian	阿穆尔－满洲
+K47	Scando-Germanic	斯堪的纳维亚－日耳曼
+K47	Iranian	伊朗
+K47	South-African	南非
+K47	Amazonian	亚马逊
+K47	Baltic	波罗的海
+K47	Malay	马来
+K47	Meso-Amerind	中美印第安
+K47	South-Chinese	华南
+K47	Papuan	巴布亚
+K47	West-Med	西地中海
+K47	Pamirian	帕米尔
+K47	Central-Med	中地中海
+K7M1	North Euro	北欧
+K7M1	Mediterranean	地中海
+K7M1	Caspian Sea	里海
+K7M1	North Africa & Middle East	北非－中东
+K7M1	Africa	非洲
+K7M1	SE Asia	东南亚
+K7M1	NE Asia	东北亚
+K13M2	West Europe	西欧
+K13M2	East Europe	东欧
+K13M2	South Med	南地中海
+K13M2	Caucasus	高加索
+K13M2	Arabia	阿拉伯
+K13M2	Siberia	西伯利亚
+K13M2	Central Asia	中亚
+K13M2	India	印度
+K13M2	South East Asia	东南亚
+K13M2	West Africa	西非
+K13M2	East Africa	东非
+K13M2	Oceania	大洋洲
+K13M2	East Asia	东亚
+K14M1	NorthWest Euro	西北欧
+K14M1	NorthCentral Euro	中北欧
+K14M1	NorthEast Eruo	东北欧
+K14M1	SouthWest Euro	西南欧
+K14M1	SouthEast Euro	东南欧
+K14M1	Anatolia	安纳托利亚
+K14M1	East Anatolia	东安纳托利亚
+K14M1	Caspian Sea	里海
+K14M1	Persic Gulf	波斯湾
+K14M1	North Africa & Arabia	北非－阿拉伯
+K14M1	Equatorial Africa	赤道非洲
+K14M1	South Himalayas	南喜马拉雅
+K14M1	SouthEast Asia	东南亚
+K14M1	NorthEast Asia	东北亚
+K18M4	Atlantic	大西洋
+K18M4	Central Euro	中欧
+K18M4	North Euro	北欧
+K18M4	West Med	西地中海
+K18M4	NW Black Sea	西北黑海
+K18M4	East Med	东地中海
+K18M4	Steppe Russia	俄罗斯大草原
+K18M4	East Caspian	东里海
+K18M4	East Anatolia	东安纳托利亚
+K18M4	Persian Gulf	波斯湾
+K18M4	North Russia	北俄罗斯
+K18M4	North Africa & Near East	北非－近东
+K18M4	Equatorial Africa	赤道非洲
+K18M4	Central Asia	中亚
+K18M4	South Central Asia	中南亚
+K18M4	Bay of Bengal	孟加拉湾
+K18M4	South China Sea	南海
+K18M4	East Asia	东亚
+K25R1	Atlantic	大西洋
+K25R1	Scandinavia	斯堪的纳维亚
+K25R1	NW Europe	西北欧
+K25R1	South Alps	南阿尔卑斯
+K25R1	West Med	西地中海
+K25R1	Baltic	波罗的海
+K25R1	Russian Steppes	俄罗斯大草原
+K25R1	North Black Sea	北黑海
+K25R1	South East Europe	东南欧
+K25R1	South Med	南地中海
+K25R1	East Caspian	东里海
+K25R1	South Caspian	南里海
+K25R1	Arabia	阿拉伯
+K25R1	South Caucasus	南高加索
+K25R1	North Anatolia	北安纳托利亚
+K25R1	Sahara	撒哈拉
+K25R1	Equatorial Africa	赤道非洲
+K25R1	East Africa	东非
+K25R1	Siberian	西伯利亚
+K25R1	East Asia	东亚
+K25R1	South Asia	南亚
+K25R1	SE Asia	东南亚
+K25R1	Central Asia	中亚
+K25R1	Amerindian	美洲印第安人
+K25R1	North Russian	北俄罗斯
+MichalK25	Nasoic	纳索伊人
+MichalK25	Uralic	乌拉尔
+MichalK25	South Amerindian	南美印第安人
+MichalK25	North Indian	北印度
+MichalK25	Central African	中非
+MichalK25	Altaic	阿尔泰
+MichalK25	Kamchatkan	堪察加
+MichalK25	Mediterranean	地中海
+MichalK25	Eskimoic	爱斯基摩人
+MichalK25	Siberian	西伯利亚
+MichalK25	Caucasian	高加索
+MichalK25	Amazonian	亚马逊
+MichalK25	East Asian	东亚
+MichalK25	East African	东非
+MichalK25	Druzian	德鲁兹人
+MichalK25	North Amerindian	北美印第安人
+MichalK25	Arabic	阿拉伯
+MichalK25	Berberic	柏柏尔人
+MichalK25	Papuan	巴布亚
+MichalK25	Northeast European	东北欧
+MichalK25	Khomani San	蔻玛尼萨恩人
+MichalK25	Taiwanese Aboriginal	台湾原住民
+MichalK25	Kalash	卡拉什人
+MichalK25	Northeast Asian	东北亚
+MichalK25	West African	西非

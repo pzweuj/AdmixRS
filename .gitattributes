@@ -1,0 +1,3 @@
+data/*.F -text linguist-vendored
+data/*.alleles -text linguist-vendored
+data/demo_genome_23andme.txt -text linguist-vendored

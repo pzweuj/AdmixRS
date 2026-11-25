@@ -1,0 +1,103 @@
+name: Build and release
+
+on:
+  push:
+    tags: ['v*']
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    name: Build ${{ matrix.platform }}
+    runs-on: ${{ matrix.runner }}
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - platform: windows-x86_64
+            runner: windows-2025
+            binary: admixrs.exe
+            format: zip
+          - platform: linux-x86_64
+            runner: ubuntu-22.04
+            binary: admixrs
+            format: tar.gz
+          - platform: macos-arm64
+            runner: macos-15
+            binary: admixrs
+            format: tar.gz
+          - platform: macos-x86_64
+            runner: macos-15-intel
+            binary: admixrs
+            format: tar.gz
+    defaults:
+      run:
+        shell: bash
+    env:
+      PACKAGE: admixrs-${{ matrix.platform }}
+      FORMAT: ${{ matrix.format }}
+      BINARY: ${{ matrix.binary }}
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+      - name: Select stable Rust
+        run: rustup update stable --no-self-update
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.13'
+      - name: Test and compile
+        run: |
+          cargo +stable test --release --locked
+          cargo +stable build --release --locked
+      - name: Package
+        run: python .github/scripts/package_release.py "target/release/$BINARY" "dist/$PACKAGE.$FORMAT"
+      - name: Run the packaged demo
+        run: |
+          mkdir unpacked
+          if [[ "$FORMAT" == zip ]]; then
+            python -m zipfile -e "dist/$PACKAGE.$FORMAT" unpacked
+          else
+            tar -xzf "dist/$PACKAGE.$FORMAT" -C unpacked
+          fi
+          cd unpacked
+          "./$PACKAGE/$BINARY" -m K7b --data-dir "$PACKAGE/data" --sort --ignore-zeros
+      - uses: actions/upload-artifact@v7
+        with:
+          name: ${{ env.PACKAGE }}
+          path: dist/${{ env.PACKAGE }}.${{ env.FORMAT }}
+          compression-level: 0
+          if-no-files-found: error
+          retention-days: 3
+
+  release:
+    needs: build
+    if: github.event_name == 'push' && startsWith(github.ref, 'refs/tags/v')
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: write
+    concurrency: release-${{ github.ref }}
+    steps:
+      - uses: actions/download-artifact@v8
+        with:
+          pattern: admixrs-*
+          path: dist
+          merge-multiple: true
+      - name: Publish release archives
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          TAG: ${{ github.ref_name }}
+        run: |
+          if draft=$(gh release view "$TAG" --json isDraft --jq '.isDraft'); then
+            if [[ "$draft" != true ]]; then
+              echo "Release $TAG is already published."
+              exit 0
+            fi
+          else
+            gh release create "$TAG" --draft --verify-tag --generate-notes --title "AdmixRS $TAG"
+          fi
+          gh release upload "$TAG" dist/* --clobber
+          gh release edit "$TAG" --draft=false
